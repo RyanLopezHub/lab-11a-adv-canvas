@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="draw()">
+
+	<canvas id="sketch" width="600" height="600">
+	</canvas>
+
+	<script>
+		function draw() {
+		 	var sketch = document.getElementById('sketch');
+			var context = sketch.getContext("2d");
+      context.fillStyle = "#81D4FA";
+
+      var colstring = prompt("How many circles in a column do you want?")
+			var colnum = parseInt(colstring);
+
+      for (i = 1; i <= colnum; i++) {
+        context.beginPath();
+  			context.arc(40, (i * 50), 20, 0, 2 * Math.PI, true);
+          //reversed x and y terms
+  				// context.arc(x, y, radius, start angle, end angle, clockwise);
+  			context.closePath();
+  			context.fill();
+
+      }
+		}
+	</script>
+
+</body>
+</html>

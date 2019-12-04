@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="draw()">
+
+	<canvas id="sketch" width="900" height="900">
+	</canvas>
+
+	<script>
+		function draw() {
+		 	var sketch = document.getElementById('sketch');
+			var context = sketch.getContext("2d");
+
+      for (i = 1; i <= 49; i++) {
+				if (i % 2 == 0){
+					    context.fillStyle = "#FF0000";//red
+							context.beginPath();
+					    context.arc((i * 10), (i * 10), (i * 5), 0, 2 * Math.PI, true);
+						// context.arc(x, y, radius, start angle, end angle, clockwise);
+					context.closePath();
+					context.fill();
+				}else {
+					context.fillStyle = "#424949";//gray
+					context.beginPath();
+					context.arc((i * 10), (i * 10), (i * 5), 0, 2 * Math.PI, true);
+						// context.arc(x, y, radius, start angle, end angle, clockwise);
+					context.closePath();
+					context.fill();
+
+				}
+      }
+		}
+	</script>
+
+</body>
+</html>
